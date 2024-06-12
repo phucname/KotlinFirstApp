@@ -2,6 +2,12 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="GreetingPreview4">
+        <State />
+      </entry>
+      <entry key="ItemBlog">
+        <State />
+      </entry>
       <entry key="SplashActivity">
         <State />
       </entry>

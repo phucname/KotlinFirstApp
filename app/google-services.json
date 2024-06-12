@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "495183880747",
+    "project_id": "blog-c18d2",
+    "storage_bucket": "blog-c18d2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:495183880747:android:611427d42129afa721c06e",
+        "android_client_info": {
+          "package_name": "com.example.myfisrtapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOTemdULs8OqM-068PgwiDaB-yw01q_c4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

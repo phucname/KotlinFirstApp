@@ -1,12 +1,8 @@
 package com.example.myfisrtapp.screens
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.LinearOutSlowInEasing
 import androidx.compose.animation.core.RepeatMode
-import androidx.compose.animation.core.animate
 import androidx.compose.animation.core.infiniteRepeatable
 import androidx.compose.animation.core.keyframes
 import androidx.compose.foundation.Image
@@ -21,10 +17,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
@@ -32,33 +26,29 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.myfisrtapp.R
 import com.example.myfisrtapp.ui.theme.MyFisrtAppTheme
 import kotlinx.coroutines.delay
 
-
-class ActivitySplash : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Splash()
-                }
-
+@Composable
+fun ActivitySplash (navController:NavController){
+    Surface(
+        modifier = Modifier.fillMaxSize(),
+        color = MaterialTheme.colorScheme.background
+    ) {
+        Splash()
+        LaunchedEffect(key1 = true) {
+            delay(2000)
+            navController.navigate("Welcome")
         }
     }
+                // A surface container using the 'background' color from the them
 }
 
 @Composable
@@ -70,6 +60,7 @@ fun Splash() {
         Spacer(modifier = Modifier.height(30.dp))
         Image(painter = painterResource(id = R.drawable.logo_2) , contentDescription ="logo")
         LoadingAnimation()
+
 
     }
 }
@@ -97,7 +88,8 @@ fun LoadingAnimation(
                         durationMillis = 1200
                         0.0f at 0 with LinearOutSlowInEasing
                         1f at 300 with LinearOutSlowInEasing
-
+                        0.0f at 600 with LinearOutSlowInEasing
+                        0.0f at 1200 with LinearOutSlowInEasing
                     },
                     repeatMode = RepeatMode.Restart
                 )
